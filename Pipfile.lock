@@ -359,11 +359,11 @@
         },
         "jupyterhub-singleuser-profiles": {
             "hashes": [
-                "sha256:1fbd4a8fbb946f9d5cc31c4a4f4eb2ec88e278e2d55b007bf4233c9b5201ea0d",
-                "sha256:8ccdb1660d0c367c64534687eb263b737ca836dc026c5863084d631e3555ec8b"
+                "sha256:2ce36e3d526823d2879ccb7e0da4f9ca7cbc6f16f67bc94352f26fd84a25b33c",
+                "sha256:9f7acdafc097dbd1aeaf2ce9aec6842b88def05e363675ab00b34225e3c7c89b"
             ],
             "index": "pypi",
-            "version": "==0.4.2"
+            "version": "==0.5.1"
         },
         "kubernetes": {
             "hashes": [
@@ -830,6 +830,7 @@
                 "sha256:70b4c6a1d9019d7b4f6846832288f86998aa3b9207c6821f3578a6a6a467fe44",
                 "sha256:d023ee369ddd2763310e4c3eae1ff649689440d4ae59d7485eb4cfbbe3e359f7"
             ],
+            "markers": "python_version >= '3.7'",
             "version": "==4.3.3"
         },
         "typing-extensions": {
