@@ -10,6 +10,8 @@ import distutils
 c.JupyterHub.cleanup_servers = False
 
 custom_notebook_namespace = os.environ.get('NOTEBOOK_NAMESPACE')
+if not custom_notebook_namespace:
+    custom_notebook_namespace = None;
 
 import uuid
 jsp_api_dict = {
