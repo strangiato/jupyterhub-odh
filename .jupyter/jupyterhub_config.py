@@ -9,17 +9,18 @@ import distutils
 # Do not shut down singleuser servers on restart
 c.JupyterHub.cleanup_servers = False
 
-custom_notebook_namespace = os.environ.get('NOTEBOOK_NAMESPACE')
-if not custom_notebook_namespace:
-    custom_notebook_namespace = None;
-
 import uuid
 jsp_api_dict = {
     'KUBERNETES_SERVICE_HOST': os.environ['KUBERNETES_SERVICE_HOST'],
     'KUBERNETES_SERVICE_PORT': os.environ['KUBERNETES_SERVICE_PORT'],
-    'JUPYTERHUB_LOGIN_URL': None,
-    'NOTEBOOK_NAMESPACE': custom_notebook_namespace
+    'JUPYTERHUB_LOGIN_URL': None
 }
+
+custom_notebook_namespace = os.environ.get('NOTEBOOK_NAMESPACE')
+if not custom_notebook_namespace:
+    custom_notebook_namespace = None;
+else:
+    jsp_api_dict['NOTEBOOK_NAMESPACE'] = custom_notebook_namespace #Set only if not None, None type in env vars causes subprocess.py to crash with error
 
 from jupyterhub_singleuser_profiles.openshift import OpenShift
 
