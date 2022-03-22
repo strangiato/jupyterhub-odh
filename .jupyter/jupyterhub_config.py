@@ -259,6 +259,7 @@ c.OpenShiftSpawner.storage_pvc_ensure = True
 if custom_notebook_namespace:
     c.KubeSpawner.namespace = custom_notebook_namespace
 
+c.KubeSpawner.common_labels = {"app.kubernetes.io/part-of": "jupyterhub"}
 c.KubeSpawner.storage_capacity = os.environ.get('SINGLEUSER_PVC_SIZE', '2Gi')
 c.KubeSpawner.pvc_name_template = '%s-nb-{username}-pvc' % os.environ['JUPYTERHUB_SERVICE_NAME']
 c.KubeSpawner.volumes = [dict(name='data', persistentVolumeClaim=dict(claimName=c.KubeSpawner.pvc_name_template))]
